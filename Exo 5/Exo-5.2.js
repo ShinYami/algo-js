@@ -1,32 +1,29 @@
 const readlineSync = require("readline-sync");
 
-function askTvSerie() {   
-let TvSerie = {
-    Name: "",
-    Year: "",
-    CastUser: [],
-};
+let series = askTvSerie();
+console.log(series.casters);
 
-TvSerie.Name = readlineSync.question("Name of your favorite Serie?");
-TvSerie.Year = Number(readlineSync.question("What's the production year ?"));
+console.log(randomizeCast(series.casters));
 
-let actor = readlineSync.question("Actor in the serie (to quit, end sentence with /) : ");
-do {
-    TvSerie.CastUser.push({ actor });
-    actor = readlineSync.question("Actor in the serie (to quit, end sentence with  /) : ");
-} while (actor != "/");
-return TvSerie;
+function askTvSerie() {
+    let tvSeries = new Object();
+
+    // series.name = readlineSync.question('The name of the series : ');
+    // series.age = readlineSync.question('The years of the series : ');
+    series.name = "room";
+    series.age = 1400;
+    series.casters= new Array();
+
+    let caster = readlineSync.question('The caster (enter / to quit): ');
+    do {
+        series.casters.push(caster);
+        caster = readlineSync.question('The caster (enter / to quit): ');
+    }while (caster != "/");
+    return series;
 }
 
-
-function randomizeCast(TvSerie) {
-    let tvCast = TvSerie.cast;
-    return tvCast;
+function randomizeCast(tvSerie){
+    return tvSerie.sort(() => Math.random() - 0.5);
 }
 
-let TvSerie = askTvSerie();
-console.log(JSON.stringify(TvSerie));
-TvSerie = randomizeCast(TvSerie);
-console.log(JSON.stringify(TvSerie));
-
-//Need to fix it//
+//need to check/fix //
