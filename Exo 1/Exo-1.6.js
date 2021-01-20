@@ -4,4 +4,7 @@ let number1 = readlineSync.question("Type in an integer");
 
 let number2 = readlineSync.question("Type another one");
 
-console.log(number1%number2);
+let result = (Number(number1))%(Number(number2));
+
+console.log(result);
+

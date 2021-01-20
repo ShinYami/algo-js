@@ -12,5 +12,5 @@ console.log("There is "+--count+" questions left");
 
 let question3 = readlineSync.question("What's your favorite city ?");
 
-console.log(question1+" (hell, what a stupid name) loves to eat disgusting "+question2+" in the awful city of "+question3);
+console.log(question1+ " (hell, what a stupid name) loves to eat disgusting " +question2+ " in the awful city of " +question3);
 

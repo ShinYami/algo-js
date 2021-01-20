@@ -4,21 +4,11 @@ let var1 = readlineSync.question("What's your shoe size ?");
 
 let var2 = readlineSync.question("What's your birth year ?");
 
-let var3 = (var1*2);
+let result = ((((Number(var1)*2))+5)*50) - ((Number(var2))) +1766;
 
-console.log(var3);
+console.log(result);
 
-console.log(var3+5);
 
-console.log((var3+5)*50);
-
-console.log((var3+5)*50-var2);
-
-console.log((var3+5)*50-var2);
-
-let var4 = ((var3+5)*50-var2);
-
-console.log(var4+1766);
 
 
 
