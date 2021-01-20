@@ -1,29 +1,39 @@
 const readlineSync = require("readline-sync");
 
-let series = askTvSerie();
-console.log(series.casters);
+function askTvSerie() {   
+let TvSerie = {
+    Name: "",
+    Year: "",
+    CastUser: [],
+};
 
-console.log(randomizeCast(series.casters));
+TvSerie.Name = readlineSync.question("Name of your favorite Serie?");
+TvSerie.Year = Number(readlineSync.question("What's the production year ?"));
 
-function askTvSerie() {
-    let tvSeries = new Object();
-
-    // series.name = readlineSync.question('The name of the series : ');
-    // series.age = readlineSync.question('The years of the series : ');
-    series.name = "room";
-    series.age = 1400;
-    series.casters= new Array();
-
-    let caster = readlineSync.question('The caster (enter / to quit): ');
-    do {
-        series.casters.push(caster);
-        caster = readlineSync.question('The caster (enter / to quit): ');
-    }while (caster != "/");
-    return series;
+let actor = readlineSync.question("Actor in the serie (to quit, end sentence with /) : ");
+do {
+    TvSerie.CastUser.push({ actor });
+    actor = readlineSync.question("Actor in the serie (to quit, end sentence with  /) : ");
+} while (actor != "/");
+return TvSerie;
 }
 
 function randomizeCast(tvSerie){
-    return tvSerie.sort(() => Math.random() - 0.5);
-}
 
-//need to check/fix //
+    let i = tvSerie.length;
+    let temp;
+    let index;
+
+    // While there are elements in the array
+    while (i > 0) {
+        // Pick a random index
+        index = Math.floor(Math.random() * i);
+        // Decrease i by 1
+        i--;
+        // And swap the last element with it
+        temp = tvSerie[i];
+        tvSerie[i] = tvSerie[index];
+        tvSerie[index] = temp;
+    }
+    return tvSerie;
+} 

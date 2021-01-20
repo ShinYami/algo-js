@@ -18,7 +18,7 @@ class Circle {
 }
 let circle = new Circle(0, 0, 5);
 console.log(circle);
-console.log("Here is circle surface: " + circle.surface);
+console.log("Here is the circle surface: " + circle.surface);
 circle.move(3, 7);
-console.log("moving  3x and 7y");
+console.log("moving 3x and 7y");
 console.log(circle);
