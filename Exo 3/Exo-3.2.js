@@ -1,5 +1,10 @@
-let arr = [1, 2, 3, 4, 5];
-let m = 0;
-for (e of arr) m += e;
-let moy = m / arr.length;
-console.log("The average is " + moy);
+var array = [1, 2, 3, 4, 5];
+    
+    // Getting sum of numbers
+    var sum = array.reduce(function(a, b){
+        return a + b;
+    }, 0);
+
+    var average = sum / array.length;
+    
+    console.log(average);
