@@ -35,5 +35,5 @@ function randomizeCast(tvSerie){
         tvSerie[i] = tvSerie[index];
         tvSerie[index] = temp;
     }
-    return tvSerie;
+    return TvSerie;
 } 

@@ -17,9 +17,24 @@ class Rectangle {
     }
 }
 
-let rectangle1 = new Rectangle(10, 10, 70, 70);
+let rectangle1 = new Rectangle(20, 20, 60, 60);
 console.log(rectangle1);
-let rectangle2 = new Rectangle(20, 20, 60, 60);
-console.log(rectangle2);
 
-rectangle1.collides(rectangle2);
+
+let rectangle2;
+let i = 1;
+
+while  (i <= 1000) {
+
+    i = i + 1;
+
+    rectangle2 = new Rectangle (
+        Math.floor(Math.random() * 100 ) + 1,
+        Math.floor(Math.random() * 100 ) + 1,
+        Math.floor(Math.random() * 100 ) + 1,
+        Math.floor(Math.random() * 100 ) + 1
+        
+    )
+    console.log(rectangle2); 
+    rectangle1.collides(rectangle2);
+}
