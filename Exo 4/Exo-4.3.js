@@ -12,9 +12,7 @@ function multiRand(n) {
     return multi;
 }
 
-let number = new Number(
-    readlineSync.question("how many numbers do you want between 1 and 10 ? ")
-);
+let number = new Number(readlineSync.question("how many numbers do you want between 1 and 10 ? "));
 
 console.log("Here is random numbers: ");
 for (e of multiRand(number)) console.log(e);
